@@ -24,6 +24,7 @@ namespace_imports = [
     'vendor/qcom/common/system/display',
     'vendor/qcom/common/system/perf',
     'vendor/qcom/common/vendor/perf',
+    'vendor/qcom/common/vendor/adreno/u',
 ]
 
 
