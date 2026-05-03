@@ -20,6 +20,9 @@ from extract_utils.main import (
 namespace_imports = [
     'device/oneplus/sm8650-common',
     'hardware/oplus',
+    'vendor/qcom/common/system/av',
+    'vendor/qcom/common/system/display',
+    'vendor/qcom/common/system/perf',
 ]
 
 
@@ -43,11 +46,18 @@ lib_fixups: lib_fixups_user_type = {
         'vendor.qti.hardware.qccsyshal@1.0',
         'vendor.qti.hardware.qccsyshal@1.1',
         'vendor.qti.hardware.qccsyshal@1.2',
+        'vendor.qti.hardware.iop@2.0',
+        'vendor.qti.hardware.limits@1.0',
+        'vendor.qti.hardware.limits@1.1',
+        'vendor.qti.hardware.perf2-V1-ndk',
         'vendor.qti.hardware.qxr-V1-ndk',
+        'vendor.qti.hardware.vpp-V1-ndk',
         'vendor.qti.hardware.wifidisplaysession@1.0',
         'vendor.qti.imsrtpservice@3.0',
         'vendor.qti.imsrtpservice@3.1',
         'vendor.qti.qccvndhal_aidl-V1-ndk',
+        'vendor.qti.qspmhal-V1-ndk',
+        'vendor.qti.qspmhal@1.0',
     ): lib_fixup_vendor_suffix,
 }
 
@@ -61,10 +71,6 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace('/my_product', '/product'),
     'system_ext/bin/horae': blob_fixup()
         .replace_needed('libprotobuf-cpp-lite.so', 'libprotobuf-cpp-lite-21.7.so'),
-    'system_ext/lib64/libwfdnative.so': blob_fixup()
-        .add_needed('libinput_shim.so'),
-    'system_ext/lib64/vendor.qti.hardware.qccsyshal@1.2-halimpl.so': blob_fixup()
-        .replace_needed('libprotobuf-cpp-full.so', 'libprotobuf-cpp-full-21.7.so'),
     'vendor/bin/init.kernel.post_boot-memory.sh': blob_fixup()
         .regex_replace('# echo always', 'echo always'),
     'vendor/bin/system_dlkm_modprobe.sh': blob_fixup()
