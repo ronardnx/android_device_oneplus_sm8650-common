@@ -193,7 +193,8 @@ blob_fixups: blob_fixups_user_type = {
             r'\1    user root\n'
         ),
     'vendor/etc/sensors/hals.conf': blob_fixup()
-        .add_line_if_missing('sensors.oplus.so'),
+        .add_line_if_missing('sensors.oplus.so')
+        .regex_replace('sensors.qsh.so', 'sensors.wrapper.so'),
     'vendor/lib64/libqcodec2_core.so': blob_fixup()
         .add_needed('libcodec2_shim.so'),
     (
