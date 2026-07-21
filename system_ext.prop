@@ -21,14 +21,8 @@ persist.bluetooth.snooplogfilter.profiles.pbap=fullfilter
 persist.bluetooth.snooplogfilter.profiles.rfcomm.enabled=true
 persist.vendor.btstack.enable.lpa=true
 
-# CNE
-persist.vendor.cne.feature=1
-
 # Display
 sys.brightness.disable_gamma_conversion=true
-
-# DPM
-persist.vendor.dpm.feature=11
 
 # GPS
 persist.backup.ntpServer=0.pool.ntp.org
@@ -73,10 +67,6 @@ persist.vendor.data.mode=concurrent
 persist.oplus.qspa.modem=enabled
 persist.radio.hvolte.enable=1
 persist.vendor.radio.poweron_opt=1
-ril.subscription.types=NV,RUIM
-ro.telephony.sim_slots.count=2
-telephony.active_modems.max_count=2
-telephony.lteOnCdmaDevice=1
 
 # Sensors
 persist.vendor.sensors.enable.mag_filter=true

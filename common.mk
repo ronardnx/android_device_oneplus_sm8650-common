@@ -323,6 +323,7 @@ TARGET_COMMON_QTI_COMPONENTS := \
     gps \
     overlay \
     perf \
+    telephony \
     wfd
 
 # QSPA
