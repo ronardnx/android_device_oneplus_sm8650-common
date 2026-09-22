@@ -74,7 +74,7 @@ BOARD_MKBOOTIMG_INIT_ARGS += --header_version $(BOARD_INIT_BOOT_HEADER_VERSION)
 # Kernel
 BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
-    androidboot.hypervisor.protected_vm.supported=0 \
+    androidboot.hypervisor.protected_vm.supported=true \
     androidboot.load_modules_parallel=true \
     androidboot.memcg=1 \
     androidboot.serialconsole=0 \
@@ -251,8 +251,6 @@ BOARD_AVB_VBMETA_VENDOR_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
 BOARD_AVB_VBMETA_VENDOR_ALGORITHM := SHA256_RSA4096
 BOARD_AVB_VBMETA_VENDOR_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 BOARD_AVB_VBMETA_VENDOR_ROLLBACK_INDEX_LOCATION := 5
-
-include device/qcom/wlan/pineapple/BoardConfigWlan.mk
 
 # Include the proprietary files BoardConfig.
 include vendor/oneplus/sm8650-common/BoardConfigVendor.mk
