@@ -139,13 +139,6 @@ on property:persist.vendor.sys.rawdump_copy=0
 on property:vendor.memory.min_free_kbytes=*
     write /proc/sys/vm/min_free_kbytes ${vendor.memory.min_free_kbytes}
 
-service kernel-boot /vendor/bin/sh /vendor/bin/init.qti.kernel.sh
-    class core
-    user root
-    group root
-    disabled
-    oneshot
-
 service kernel-post-boot /vendor/bin/sh /vendor/bin/init.kernel.post_boot.sh
     class core
     user root
@@ -167,7 +160,6 @@ on property:sys.boot_completed=1
     write /sys/block/dm-1/queue/read_ahead_kb 512
     write /sys/block/dm-2/queue/read_ahead_kb 512
     write /proc/sys/vm/page-cluster 0
-    start kernel-boot
     start kernel-post-boot
 
 on property:vendor.pasr.enabled=false
@@ -175,13 +167,6 @@ on property:vendor.pasr.enabled=false
 
 on charger
     start kernel-post-boot
-
-service vendor.msm_irqbalance /system/bin/true
-    class core
-    user root
-    group root
-    disabled
-    oneshot
 
 service gki.modprobe /vendor/bin/system_dlkm_modprobe.sh
     class main

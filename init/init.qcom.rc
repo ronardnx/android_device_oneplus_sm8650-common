@@ -714,27 +714,6 @@ service vm_bms /vendor/bin/vm_bms
     group root
     disabled
 
-service vendor.msm_irqbalance /system/bin/true
-    class core
-    user root
-    group root
-    disabled
-    oneshot
-
-service vendor.msm_irqbal_lb /system/bin/true
-    class core
-    user root
-    group root
-    disabled
-    oneshot
-
-service vendor.msm_irqbl_sdm630 /system/bin/true
-    class core
-    user root
-    group root
-    disabled
-    oneshot
-
 # service for USERDEBUG
 service vendor.LKCore-dbg /vendor/bin/LKCore
     class late_start

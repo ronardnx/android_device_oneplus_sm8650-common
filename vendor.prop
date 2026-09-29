@@ -189,5 +189,3 @@ ro.usb.uvc.enabled=true
 # Zygote
 zygote.critical_window.minute=10
 
-# QSPM
-ro.vendor.qspm.enable=false
