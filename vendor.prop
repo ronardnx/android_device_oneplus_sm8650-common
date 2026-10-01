@@ -189,3 +189,6 @@ ro.usb.uvc.enabled=true
 # Zygote
 zygote.critical_window.minute=10
 
+
+# SurfaceFlinger
+ro.surface_flinger.supports_background_blur=1

@@ -423,3 +423,6 @@ PRODUCT_PACKAGES -= framework-audio_effects.xml
 V4A_AUDIO_SKUS := $(QCV_FAMILY_SKUS)
 $(call inherit-product, vendor/viper4android/viper4android.mk)
 V4A_AUDIO_SKUS :=
+
+# SurfaceFlinger
+TARGET_USES_BLUR := true
